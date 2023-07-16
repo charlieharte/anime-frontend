@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function New() {
+function Review() {
     const navigate = useNavigate()
 
     const [animeInput, setAnimeInput] = useState({
@@ -41,13 +41,18 @@ function New() {
             </div>
             <br />
             <div>
-                <p>Please provide an image of the anime:</p>
+                <p>Image of the anime:</p>
                 <input onChange={handleChange} value={animeInput.image} name='image' placeholder='Image' />
             </div>
             <br />
             <div>
+                <p>Number of episodes watched:</p>
+                <input onChange={handleChange} value={animeInput.episodes} name='episodes' placeholder='Episodes' />
+            </div>
+            <br />
+            <div>
                 <p>Please provide a review for the anime:</p>
-                <input onChange={handleChange} value={animeInput.description} name='description' placeholder='Description' />
+                <input onChange={handleChange} value={animeInput.review} name='review' placeholder='Review' />
             </div>
             <br />
             <input type='submit' />
@@ -55,4 +60,4 @@ function New() {
     )
 }
 
-export default New
+export default Review

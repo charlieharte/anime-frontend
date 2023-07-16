@@ -31,7 +31,7 @@ function Anime() {
             <div>
                 <h1>{anime.name}</h1>
                 <img src={anime.image} alt={anime.name} height={300} />
-                <p>Description:</p>
+                <p>Review:</p>
                 <div>
                     <button onClick={() => navigate(`/anime/update/${id}`)}>Edit</button>
                     <button onClick={deleteAnime}>Delete</button>

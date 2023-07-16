@@ -42,6 +42,8 @@ const display = animeInput && (
 <form onSubmit={handleSubmit}>
 <input required onChange={handleChange} value={animeInput.name} name='name' placeholder='name' />
 <input onChange={handleChange} value={animeInput.image} name='image' placeholder='image' />
+<input onChange={handleChange} value={animeInput.episodes} name='episodes' placeholder='episodes' />
+<input onChange={handleChange} value={animeInput.review} name='review' placeholder='review' />
 <input type='submit' />
 </form>
 )
