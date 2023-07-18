@@ -9,6 +9,8 @@ function App() {
         <Navigation></Navigation>
         <Home></Home>
       </header>
+    <div>
+      <h1>Hello</h1>
     </div>
   );
 }
