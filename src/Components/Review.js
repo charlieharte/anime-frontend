@@ -34,7 +34,7 @@ function Review() {
     // add character limit later
     return (    
         <form onSubmit={handleSubmit}>
-            <h3>New</h3>
+            <h3>Review</h3>
             <div>
                 <p>Name of anime:</p>
                 <input onChange={handleChange} value={animeInput.name} name='name' placeholder='Name' required />

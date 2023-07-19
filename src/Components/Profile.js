@@ -1,11 +1,25 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 
 function Profile() {
     const navigate = useNavigate()
+
+    // const [animeInput, setAnimeInput] = useState(null)
+
+    // const { id } = useParams()
+    // const URL= `${process.env.REACT_APP_BACKEND_URI}/animes/${id}`
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //   const response = await fetch(URL)
+    //   const data = await response.json()
+    //   setAnimeInput(data)
+    //   }
+
+      // fetchData()
+      // }, [id, URL])
 
     return (
         <>
@@ -28,19 +42,16 @@ function Profile() {
           <Card>
 
             <Card.Body>
-              <img src=''/>
+              {/* <img src = {animeInput.image} /> */}
               <Card.Title>
-                {}
+                {/* {animeInput.name} */}
               </Card.Title>
-              
               <Card.Text>
-                {}
-                
+                {/* {animeInput.review} */}
               </Card.Text>
           </Card.Body>
-
           <Card.Footer>
-            <small className="text-muted">Rating {} Year: {} Episodes: {}</small>
+            {/* <small className="text-muted">{animeInput.episodes}</small> */}
           </Card.Footer>
         </Card>
         {/* )

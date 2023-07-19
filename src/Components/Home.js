@@ -20,13 +20,12 @@ function Home() {
     }, [])
 
   return (
-    <CardGroup style={{ width: '50rem' }}>
+    <CardGroup style={{flex:'auto', margin:'10px', padding:'10px'}}>
       {animes.length > 0 && 
             animes.map(anime => {
               console.log('LE ANIME =>', anime)
         return (
           <Card>
-
             <Card.Body>
               <img src={anime.images.jpg.image_url}/>
               <Card.Title>
@@ -41,6 +40,10 @@ function Home() {
 
           <Card.Footer>
             <small className="text-muted">Rating {anime.rating} Year: {anime.year} Episodes: {anime.episodes}</small>
+            <br />
+            <small>
+              <button>Add to Favorites</button>
+            </small>
           </Card.Footer>
         </Card>
         )

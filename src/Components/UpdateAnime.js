@@ -7,7 +7,7 @@ const navigate = useNavigate()
 const [animeInput, setAnimeInput] = useState(null)
 
 const { id } = useParams()
-const URL = `${process.env.REACT_APP_BACKEND_URI}/anime/${id}`
+const URL = `${process.env.REACT_APP_BACKEND_URI}/animes/${id}`
 
 useEffect(() => {
 const fetchData = async () => {
