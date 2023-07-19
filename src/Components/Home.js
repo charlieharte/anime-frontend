@@ -8,68 +8,48 @@ function Home() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const URL = `${process.env.REACT_APP_BACKEND_URI}/animes`
+            const URL = "https://api.jikan.moe/v4/top/anime?filter=bypopularity"
             const response = await fetch(URL)
             const data = await response.json()
-            setAnimes(data)
+            console.log(data)
+            // const newAni = [data.data[0],data.data[1],data.data[2]]
+            setAnimes(data.data)
         }
 
         fetchData()
     }, [])
 
-    const display = animes.map(anime => {
-        return (
-            <div key={anime._id}>
-                <Link to={`/anime/${anime._id}`}>
-                    {anime.name}
-                </Link>
-            </div>
-        )
-    })
+    
 
 
   return (
     <CardGroup>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>{display}</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This card has supporting text below as a natural lead-in to
-            additional content.{' '}
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
-        <Card.Body>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This card has even longer content than the
-            first to show that equal height action.
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
+      {animes.length > 0  && 
+            animes.map(anime => {
+              console.log('LE ANIME =>', anime)
+        return (
+          <Card key={anime.mal_id}>
+            <Card.Img variant="top" src="holder.js/100px160" />
+            
+            <Card.Body>
+              <Card.Title>
+                {anime.title_english}
+              </Card.Title>
+              
+              <Card.Text>
+                {anime.background}
+                
+              </Card.Text>
+          </Card.Body>
+
+          <Card.Footer>
+            <small className="text-muted">Rating {anime.rating} Year: {anime.year} Episodes: {anime.episodes}</small>
+          </Card.Footer>
+        </Card>
+        )
+    })
+  
+  }
     </CardGroup>
   );
 }
